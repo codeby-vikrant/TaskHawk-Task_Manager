@@ -14,6 +14,9 @@
 		4338F1A12C5D5C02003CFCB1 /* Task_ManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1A02C5D5C02003CFCB1 /* Task_ManagementTests.swift */; };
 		4338F1AB2C5D5C02003CFCB1 /* Task_ManagementUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1AA2C5D5C02003CFCB1 /* Task_ManagementUITests.swift */; };
 		4338F1AD2C5D5C02003CFCB1 /* Task_ManagementUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1AC2C5D5C02003CFCB1 /* Task_ManagementUITestsLaunchTests.swift */; };
+		4338F1BC2C5D5DD2003CFCB1 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1BB2C5D5DD2003CFCB1 /* Task.swift */; };
+		4338F1BF2C5D6435003CFCB1 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1BE2C5D6435003CFCB1 /* View+Extensions.swift */; };
+		4338F1C12C5D6466003CFCB1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1C02C5D6465003CFCB1 /* Date+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,9 @@
 		4338F1A62C5D5C02003CFCB1 /* Task ManagementUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Task ManagementUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4338F1AA2C5D5C02003CFCB1 /* Task_ManagementUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task_ManagementUITests.swift; sourceTree = "<group>"; };
 		4338F1AC2C5D5C02003CFCB1 /* Task_ManagementUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task_ManagementUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4338F1BB2C5D5DD2003CFCB1 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		4338F1BE2C5D6435003CFCB1 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		4338F1C02C5D6465003CFCB1 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +100,8 @@
 		4338F18E2C5D5C00003CFCB1 /* Task Management */ = {
 			isa = PBXGroup;
 			children = (
+				4338F1BD2C5D6415003CFCB1 /* Helpers */,
+				4338F1BA2C5D5D6F003CFCB1 /* Models */,
 				4338F18F2C5D5C00003CFCB1 /* Task_ManagementApp.swift */,
 				4338F1912C5D5C00003CFCB1 /* ContentView.swift */,
 				4338F1932C5D5C02003CFCB1 /* Assets.xcassets */,
@@ -125,6 +133,23 @@
 				4338F1AC2C5D5C02003CFCB1 /* Task_ManagementUITestsLaunchTests.swift */,
 			);
 			path = "Task ManagementUITests";
+			sourceTree = "<group>";
+		};
+		4338F1BA2C5D5D6F003CFCB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4338F1BB2C5D5DD2003CFCB1 /* Task.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4338F1BD2C5D6415003CFCB1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4338F1BE2C5D6435003CFCB1 /* View+Extensions.swift */,
+				4338F1C02C5D6465003CFCB1 /* Date+Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +283,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4338F1922C5D5C00003CFCB1 /* ContentView.swift in Sources */,
+				4338F1BC2C5D5DD2003CFCB1 /* Task.swift in Sources */,
+				4338F1BF2C5D6435003CFCB1 /* View+Extensions.swift in Sources */,
+				4338F1C12C5D6466003CFCB1 /* Date+Extensions.swift in Sources */,
 				4338F1902C5D5C00003CFCB1 /* Task_ManagementApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
