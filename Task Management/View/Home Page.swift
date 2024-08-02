@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct Home_Page: View {
+    @State private var currentDate: Date = .init()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading, spacing: 0, content: {
+            
+        })
     }
 }
 
