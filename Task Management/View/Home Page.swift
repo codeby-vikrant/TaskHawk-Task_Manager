@@ -14,6 +14,7 @@ struct Home_Page: View {
     @State private var currentWeekIndex: Int = 1
     @State private var createWeek: Bool = false
     @State private var tasks: [Task] = sampleTasks.sorted(by: {$1.creationDate > $0.creationDate})
+    @State
     
     //Animation Namespace
     @Namespace private var animation
