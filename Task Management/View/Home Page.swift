@@ -161,10 +161,12 @@ struct Home_Page: View {
     //Tasks View Part
     func TasksView() -> some View{
         VStack(alignment: .leading, spacing: 35){
-            ForEach($tasks){ $tasks in
-                
+            ForEach($tasks){ $task in
+                TaskRowView(task: $task)
             }
         }
+        .padding([.vertical, .leading], 15)
+        .padding(.top, 15)
     }
     
     func paginateWeek(){

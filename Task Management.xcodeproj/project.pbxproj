@@ -19,6 +19,7 @@
 		4338F1C12C5D6466003CFCB1 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1C02C5D6465003CFCB1 /* Date+Extensions.swift */; };
 		4338F1C42C5D6701003CFCB1 /* Home Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338F1C32C5D6701003CFCB1 /* Home Page.swift */; };
 		43B556862C5E2F7300F378EE /* OffsetKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B556852C5E2F7300F378EE /* OffsetKey.swift */; };
+		43B5568A2C5E39DE00F378EE /* TaskRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B556892C5E39DE00F378EE /* TaskRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		4338F1C02C5D6465003CFCB1 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		4338F1C32C5D6701003CFCB1 /* Home Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home Page.swift"; sourceTree = "<group>"; };
 		43B556852C5E2F7300F378EE /* OffsetKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OffsetKey.swift; sourceTree = "<group>"; };
+		43B556892C5E39DE00F378EE /* TaskRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				4338F1C32C5D6701003CFCB1 /* Home Page.swift */,
+				43B556892C5E39DE00F378EE /* TaskRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			files = (
 				4338F1922C5D5C00003CFCB1 /* ContentView.swift in Sources */,
 				4338F1BC2C5D5DD2003CFCB1 /* Task.swift in Sources */,
+				43B5568A2C5E39DE00F378EE /* TaskRowView.swift in Sources */,
 				4338F1C42C5D6701003CFCB1 /* Home Page.swift in Sources */,
 				43B556862C5E2F7300F378EE /* OffsetKey.swift in Sources */,
 				4338F1BF2C5D6435003CFCB1 /* View+Extensions.swift in Sources */,
