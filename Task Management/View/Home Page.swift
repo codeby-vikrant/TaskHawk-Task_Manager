@@ -146,6 +146,7 @@ struct Home_Page: View {
             }
         }
     }
+    
     func paginateWeek(){
         if weekSlider.indices.contains(currentWeekIndex){
             if let firstDate = weekSlider[currentWeekIndex].first?.date, currentWeekIndex == 0 {
