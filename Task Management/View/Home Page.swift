@@ -10,8 +10,8 @@ import SwiftUI
 struct Home_Page: View {
     //Task manager properties
     @State private var currentDate: Date = .init()
-    @State private var weeekSlider: [[Date.WeekDay]] = []
-    
+    @State private var weekSlider: [[Date.WeekDay]] = []
+    @State private var currentWeekIndex: Int = 0
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
@@ -30,6 +30,14 @@ struct Home_Page: View {
                 
                 Text(currentDate.format("YYYY"))
                     .foregroundStyle(.gray)
+                
+                //Week Slider
+                TabView(selection: $currentWeekIndex){
+                    ForEach(weekSlider.indices, id: \.self) { index in
+                        let week = weekSlider[index]
+                    }
+                }
+                .tabViewStyle(.page(indexDisplayMode: .never))
             }
             .hSpacing(.leading)
             .overlay(alignment: .topTrailing, content: {
