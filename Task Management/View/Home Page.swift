@@ -13,12 +13,23 @@ struct Home_Page: View {
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeekIndex: Int = 1
     @State private var createWeek: Bool = false
+    @State private var tasks: [Task] = sampleTasks.sorted(by: {$1.creationDate > $0.creationDate})
     
     //Animation Namespace
     @Namespace private var animation
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
             HeaderView()
+            
+            ScrollView(.vertical){
+                VStack{
+                    //Tasks View
+                    TasksView()
+                }
+                .hSpacing(.center)
+                .vSpacing(.center)
+            }
+            .scrollIndicators(.hidden)
         })
         .vSpacing(.top)
         .onAppear(perform: {
@@ -89,7 +100,7 @@ struct Home_Page: View {
         }
     }
     
-    //Week View
+    //Week View Part
     @ViewBuilder
     func WeekView(_ week: [Date.WeekDay]) -> some View{
         HStack(spacing: 0){
@@ -143,6 +154,15 @@ struct Home_Page: View {
                             createWeek = false
                         }
                     }
+            }
+        }
+    }
+    
+    //Tasks View Part
+    func TasksView() -> some View{
+        VStack(alignment: .leading, spacing: 35){
+            ForEach($tasks){ $tasks in
+                
             }
         }
     }
