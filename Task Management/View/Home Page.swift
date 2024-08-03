@@ -15,9 +15,15 @@ struct Home_Page: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
-           HeaderView()
+            HeaderView()
         })
         .vSpacing(.top)
+        .onAppear(perform: {
+            if weekSlider.isEmpty{
+                let currentWeek = Date().fetchWeek()
+                weekSlider.append(currentWeek)
+            }
+        })
     }
     
     //Header view Part
@@ -67,7 +73,27 @@ struct Home_Page: View {
     @ViewBuilder
     func WeekView(_ week: [Date.WeekDay]) -> some View{
         HStack(spacing: 0){
-            
+            ForEach(week) {day in
+                VStack(spacing: 8){
+                    Text(day.date.format("E"))
+                        .font(.callout)
+                        .textScale(.secondary)
+                        .fontWeight(.medium)
+                        .foregroundStyle(.gray)
+                    
+                    Text(day.date.format("dd"))
+                        .font(.callout)
+                        .textScale(.secondary)
+                        .fontWeight(.bold)
+                        .foregroundStyle(.gray)
+                        .frame(width: 35, height: 35)
+                        .background(content: {
+                            
+                        })
+                        .background(.white.shadow(.drop(radius: 1)), in: .circle)
+                }
+                .hSpacing(.center)
+            }
         }
     }
 }
