@@ -12,6 +12,7 @@ struct Home_Page: View {
     @State private var currentDate: Date = .init()
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeekIndex: Int = 1
+    @State private var createWeek: Bool = false
     
     //Animation Namespace
     @Namespace private var animation
@@ -82,7 +83,9 @@ struct Home_Page: View {
         .padding(15)
         .background(.white)
         .onChange(of: currentWeekIndex, initial: false){ oldValue, newValue in
-                
+            if(newValue == 0 || newValue == (weekSlider.count - 1)){
+                createWeek = true
+            }
         }
     }
     
