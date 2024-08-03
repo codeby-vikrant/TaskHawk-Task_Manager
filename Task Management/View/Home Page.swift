@@ -25,6 +25,16 @@ struct Home_Page: View {
                 Text(currentDate.format("YYYY"))
                     .foregroundStyle(.gray)
             }
+            .hSpacing(.leading)
+            .overlay(alignment: .topTrailing, content: {
+                Button(action: {}, label: {
+                    Image(.pic)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 45, height: 45)
+                        .clipShape(.circle)
+                })
+            })
             .font(.title.bold())
             Text(currentDate.formatted(date: .complete, time: .omitted))
                 .font(.callout)
@@ -33,7 +43,7 @@ struct Home_Page: View {
                 .foregroundStyle(.gray)
         }
         .padding(15)
-        .hSpacing(.leading)
+        .background(.white)
     }
 }
 
