@@ -13,6 +13,7 @@ struct Home_Page: View {
         VStack(alignment: .leading, spacing: 0, content: {
            HeaderView()
         })
+        .vSpacing(.top)
     }
     @ViewBuilder
     func HeaderView() -> some View{
@@ -31,6 +32,8 @@ struct Home_Page: View {
                 .textScale(.secondary)
                 .foregroundStyle(.gray)
         }
+        .padding(15)
+        .hSpacing(.leading)
     }
 }
 
