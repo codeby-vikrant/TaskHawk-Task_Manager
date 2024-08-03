@@ -34,12 +34,14 @@ struct Home_Page: View {
         })
         .vSpacing(.top)
         .overlay(alignment: .bottomTrailing, content: {
-            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+            Button(action: {
+                createNewTask.toggle()
+            }, label: {
                 Image(systemName: "plus")
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
                     .frame(width: 55, height: 55)
-                    .background(.darkBlue, in: .circle)
+                    .background(.darkBlue.shadow(.drop(color: .black.opacity(0.25), radius: 5, x: 10, y: 10)), in: .circle)
             })
             .padding(15)
         })
