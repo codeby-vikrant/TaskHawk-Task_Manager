@@ -132,6 +132,35 @@ struct Home_Page: View {
                 }
             }
         }
+        .background{
+            GeometryReader{
+                let minX = $0.frame(in: .global).minX
+                Color.clear
+                    .preference(key: OffsetKey.self, value: minX)
+                    .onPreferenceChange(OffsetKey.self) { value in
+                        if value.rounded() == 15 && createWeek{
+                            paginateWeek()
+                            createWeek = false
+                        }
+                    }
+            }
+        }
+    }
+    func paginateWeek(){
+        if weekSlider.indices.contains(currentWeekIndex){
+            if let firstDate = weekSlider[currentWeekIndex].first?.date, currentWeekIndex == 0 {
+                weekSlider.insert(firstDate.createPreviousWeek(), at: 0)
+                weekSlider.removeLast()
+                currentWeekIndex = 1
+            }
+            
+            if let lastDate = weekSlider[currentWeekIndex].first?.date, currentWeekIndex == (weekSlider.count - 1) {
+                weekSlider.append(lastDate.createNextWeek())
+                weekSlider.removeFirst()
+                currentWeekIndex = weekSlider.count - 2
+            }
+        }
+        
     }
 }
 
