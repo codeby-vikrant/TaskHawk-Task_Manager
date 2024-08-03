@@ -35,9 +35,12 @@ struct Home_Page: View {
                 TabView(selection: $currentWeekIndex){
                     ForEach(weekSlider.indices, id: \.self) { index in
                         let week = weekSlider[index]
+                        WeekView(week)
+                            .tag(index)
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .never))
+                .frame(height: 90)
             }
             .hSpacing(.leading)
             .overlay(alignment: .topTrailing, content: {
@@ -58,6 +61,14 @@ struct Home_Page: View {
         }
         .padding(15)
         .background(.white)
+    }
+    
+    //Week View
+    @ViewBuilder
+    func WeekView(_ week: [Date.WeekDay]) -> some View{
+        HStack(spacing: 0){
+            
+        }
     }
 }
 
