@@ -11,7 +11,7 @@ struct Home_Page: View {
     //Task manager properties
     @State private var currentDate: Date = .init()
     @State private var weekSlider: [[Date.WeekDay]] = []
-    @State private var currentWeekIndex: Int = 0
+    @State private var currentWeekIndex: Int = 1
     
     //Animation Namespace
     @Namespace private var animation
@@ -60,9 +60,11 @@ struct Home_Page: View {
                 ForEach(weekSlider.indices, id: \.self) { index in
                     let week = weekSlider[index]
                     WeekView(week)
+                        .padding(.horizontal, 15)
                         .tag(index)
                 }
             }
+            .padding(.horizontal, -15)
             .tabViewStyle(.page(indexDisplayMode: .never))
             .frame(height: 90)
         }
@@ -79,6 +81,9 @@ struct Home_Page: View {
         
         .padding(15)
         .background(.white)
+        .onChange(of: currentWeekIndex, initial: false){ oldValue, newValue in
+                
+        }
     }
     
     //Week View
