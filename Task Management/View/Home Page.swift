@@ -25,6 +25,11 @@ struct Home_Page: View {
                     .foregroundStyle(.gray)
             }
             .font(.title.bold())
+            Text(currentDate.formatted(date: .complete, time: .omitted))
+                .font(.callout)
+                .fontWeight(.semibold)
+                .textScale(.secondary)
+                .foregroundStyle(.gray)
         }
     }
 }
