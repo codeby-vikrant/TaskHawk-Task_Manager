@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct Home_Page: View {
+    //Task manager properties
     @State private var currentDate: Date = .init()
+    @State private var weeekSlider: [[Date.WeekDay]] = []
+    
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
            HeaderView()
         })
         .vSpacing(.top)
     }
+    
+    //Header view Part
     @ViewBuilder
     func HeaderView() -> some View{
         VStack(alignment: .leading, spacing: 6){
