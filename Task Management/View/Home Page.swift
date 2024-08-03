@@ -163,6 +163,14 @@ struct Home_Page: View {
         VStack(alignment: .leading, spacing: 35){
             ForEach($tasks){ $task in
                 TaskRowView(task: $task)
+                    .background(alignment: .leading){
+                        if tasks.last?.id != task.id{
+                            Rectangle()
+                                .frame(width: 1)
+                                .offset(x: 8)
+                                .padding(.bottom, -35)
+                        }
+                    }
             }
         }
         .padding([.vertical, .leading], 15)

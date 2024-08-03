@@ -20,6 +20,8 @@ extension Date{
         return Calendar.current.isDateInToday(self)
     }
     
+    
+    
     //fetching week based on given date
     func fetchWeek(_ date: Date = .init()) -> [WeekDay]{
         let calender = Calendar.current

@@ -12,7 +12,7 @@ struct TaskRowView: View {
     var body: some View {
         HStack(alignment: .top, spacing: 15){
             Circle()
-                .fill(.darkBlue)
+                .fill(indicatorColor)
                 .frame(width: 10, height: 10)
                 .padding(4)
                 .background(.white.shadow(.drop(color: .black.opacity(0.1), radius: 3)), in: .circle)
@@ -30,7 +30,14 @@ struct TaskRowView: View {
             .hSpacing(.leading)
             .background(task.tint, in: .rect(topLeadingRadius: 15, bottomLeadingRadius: 15))
             .strikethrough(task.isCompleted, pattern: .solid, color: .red)
+            .offset(y: -8)
         }
+    }
+    var indicatorColor: Color{
+        if task.isCompleted{
+            return .green
+        }
+        
     }
 }
 
