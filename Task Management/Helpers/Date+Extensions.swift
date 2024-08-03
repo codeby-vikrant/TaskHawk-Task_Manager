@@ -37,6 +37,25 @@ extension Date{
         }
         return week
     }
+    
+    func createNextWeek() -> [WeekDay]{
+        let calender = Calendar.current
+        let startOfLastDate = calender.startOfDay(for: self)
+        guard let nextDate = calender.date(byAdding: .day, value: 1, to: startOfLastDate) else{
+            return []
+        }
+        return fetchWeek(nextDate)
+    }
+    
+    func createPreviousWeek() -> [WeekDay]{
+        let calender = Calendar.current
+        let startOfFirstDate = calender.startOfDay(for: self)
+        guard let previousDate = calender.date(byAdding: .day, value: -1, to: startOfFirstDate) else{
+            return []
+        }
+        return fetchWeek(previousDate)
+    }
+    
     struct WeekDay: Identifiable{
         var id: UUID = .init()
         var date: Date

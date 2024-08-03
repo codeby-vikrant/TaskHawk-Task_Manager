@@ -23,7 +23,16 @@ struct Home_Page: View {
         .onAppear(perform: {
             if weekSlider.isEmpty{
                 let currentWeek = Date().fetchWeek()
+                
+                if let firstDate = currentWeek.first?.date{
+                    weekSlider.append(firstDate.createPreviousWeek())
+                }
+                
                 weekSlider.append(currentWeek)
+                
+                if let lastDate = currentWeek.last?.date{
+                    weekSlider.append(lastDate.createNextWeek())
+                }
             }
         })
     }
@@ -94,6 +103,7 @@ struct Home_Page: View {
                             if isSameDate(day.date, currentDate){
                                 Circle()
                                     .fill(.darkBlue)
+                                    .matchedGeometryEffect(id: "TABINDICATOR", in: animation)
                             }
                             if day.date.isToday{
                                 Circle()
